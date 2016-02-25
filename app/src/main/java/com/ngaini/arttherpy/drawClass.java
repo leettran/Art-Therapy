@@ -3,8 +3,10 @@ package com.ngaini.arttherpy;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PorterDuff;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -108,5 +110,10 @@ public class drawClass extends View {
         canvasPaint = new Paint(Paint.DITHER_FLAG);
 
 
+    }
+
+    public void eraseFunction()
+    {
+        drawCanvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
     }
 }
