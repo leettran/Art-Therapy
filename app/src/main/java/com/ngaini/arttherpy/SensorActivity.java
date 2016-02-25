@@ -116,6 +116,7 @@ public class SensorActivity extends AppCompatActivity implements SensorEventList
     }
 
     private void displayAcceleration() {
+        textView = (TextView)findViewById(R.id.accelerometer_textview);
         int accel = Math.abs((int) mAccel);
         if (accel > 1) {
             textView.setTextColor(Color.RED);
