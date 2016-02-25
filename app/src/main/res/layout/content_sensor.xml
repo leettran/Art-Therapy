@@ -9,13 +9,13 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.ngaini.arttherpy.DrawActivity"
-    tools:showIn="@layout/activity_draw">
-    <com.ngaini.arttherpy.DrawActivity
+    tools:context=".SensorActivity"
+    tools:showIn="@layout/activity_sensor">
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/canvas_view"
-        android:background="#fff"/>
+        android:layout_height="wrap_content"
+        android:text="Hello"
+        android:id="@+id/accelerometer_textview"/>
 
 
 </RelativeLayout>

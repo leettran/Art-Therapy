@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DrawActivity"
+            android:name=".SensorActivity"
             android:label="@string/title_activity_draw"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
