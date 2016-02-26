@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(new drawClass(this, null));
-        registerReceiver(new BroadcastThis(), new IntentFilter("android.intent.action.USER_PRESENT"));
+//        registerReceiver(new BroadcastThis(), new IntentFilter("android.intent.action.USER_PRESENT"));
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 //
