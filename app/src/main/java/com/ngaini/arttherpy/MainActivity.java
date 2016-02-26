@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
@@ -129,12 +130,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     private void displayAcceleration() {
-        textView = (TextView)findViewById(R.id.accelerometer_textview);
+//        textView = (TextView)findViewById(R.id.accelerometer_textview);
         int accel = Math.abs((int) mAccel);
         if (accel > 2) {
                 drawClass eraseCanvas = new drawClass(this, null);
                 eraseCanvas.eraseFunction();
+            Toast.makeText(MainActivity.this, "Shaking @"+accel, Toast.LENGTH_SHORT).show();
         } else {
+
 //            textView.setTextColor(Color.BLACK);
         }
 //        textView.setText(Integer.toString(accel));
