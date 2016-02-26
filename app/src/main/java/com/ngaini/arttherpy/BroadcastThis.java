@@ -25,6 +25,7 @@ public class BroadcastThis extends BroadcastReceiver {
         {
 //
 //            //phone was unlocked, do stuff here
+            Toast.makeText(context, "We are here", Toast.LENGTH_SHORT).show();
 //
         }
         else
@@ -37,7 +38,7 @@ public class BroadcastThis extends BroadcastReceiver {
 
             Intent callMain = new Intent(context, MainActivity.class);
             PendingIntent pendingIntent = PendingIntent.getActivity(
-                    context, requestCode, intent, flags);
+                    context, requestCode, callMain, flags);
 
             Notification notification = new Notification.Builder(context)
                     .setContentTitle("Emergency alert!")
