@@ -1,6 +1,7 @@
 package com.ngaini.arttherpy;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
 import android.hardware.Sensor;
@@ -12,6 +13,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private float mAccel; // acceleration apart from gravity
     private TextView textView;
     private drawClass drawClass_obj;
+//    private MusicClass playthis;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,11 +147,18 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         if (accel > 2) {
 //                drawClass eraseCanvas = new drawClass(this, null);
                 drawClass_obj.eraseFunction();
-            Toast.makeText(MainActivity.this, "Shaking @"+accel, Toast.LENGTH_SHORT).show();
+                 Intent musicIntent = new Intent(this,MusicClass.class);
+//            Log.e("XYZ", "Before call");
+
+                startService(musicIntent);
+//            Toast.makeText(MainActivity.this, "Shaking @"+accel, Toast.LENGTH_SHORT).show();
         } else {
 
 //            textView.setTextColor(Color.BLACK);
+//            Toast.makeText(MainActivity.this, "Shaking @"+accel, Toast.LENGTH_SHORT).show();
         }
+//        Intent musicIntent = new Intent(this,MusicClass.class);
+//        startService(musicIntent);
 //        textView.setText(Integer.toString(accel));
     }
 }

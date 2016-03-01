@@ -41,8 +41,8 @@ public class BroadcastThis extends BroadcastReceiver {
                     context, requestCode, callMain, flags);
 
             Notification notification = new Notification.Builder(context)
-                    .setContentTitle("Emergency alert!")
-                    .setContentText("Your house is on fire!!!")
+                    .setContentTitle("Art Therapy")
+                    .setContentText("Click to play Art Therapy")
                     .setSmallIcon(android.R.drawable.ic_menu_day)
                     .setContentIntent(pendingIntent)
                     .build();

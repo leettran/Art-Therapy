@@ -10,6 +10,7 @@ import android.graphics.PorterDuff;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
 /**
  * Created by Nathan on 2/24/2016.
@@ -117,5 +118,6 @@ public class drawClass extends View {
     {
         drawPath.reset();
         invalidate();
+        Toast.makeText(this.getContext(), "Abra Kadbra", Toast.LENGTH_SHORT).show();
     }
 }
