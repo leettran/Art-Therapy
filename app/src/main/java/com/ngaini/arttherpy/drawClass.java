@@ -16,9 +16,10 @@ import android.view.View;
  */
 public class drawClass extends View {
     //for drawing path
-    private Path drawPath;
+    private Path drawPath = new Path();
     // for adding style color etc to our shape
-    private Paint drawPaint, canvasPaint;
+    private Paint drawPaint = new Paint();
+    private Paint canvasPaint;
     // initial color
     private int paintColor= 0xAA60A00;
 
@@ -44,9 +45,9 @@ public class drawClass extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-//        super.onDraw(canvas);
+        super.onDraw(canvas);
 
-        canvas.drawBitmap(canvasBitmap,0,0,canvasPaint);
+//        canvas.drawBitmap(canvasBitmap,0,0,canvasPaint);
 
         // draw the path based on the paint mentioned above
         canvas.drawPath(drawPath, drawPaint);
@@ -72,8 +73,8 @@ public class drawClass extends View {
                 break;
 
             case MotionEvent.ACTION_UP:
-                drawCanvas.drawPath(drawPath, drawPaint);
-                drawPath.reset();
+//                drawCanvas.drawPath(drawPath, drawPaint);
+//                drawPath.reset();
                 break;
             default:
                 return false;
@@ -91,8 +92,8 @@ public class drawClass extends View {
 
 
         //instantiate drawing variables
-        drawPath = new Path();
-        drawPaint= new Paint();
+//        drawPath = new Path();
+//        drawPaint= new Paint();
 
         //Setting initial path properties
 
@@ -114,6 +115,7 @@ public class drawClass extends View {
 
     public void eraseFunction()
     {
-        drawCanvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
+        drawPath.reset();
+        invalidate();
     }
 }

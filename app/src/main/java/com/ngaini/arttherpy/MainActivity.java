@@ -31,10 +31,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private float mAccelLast; // last acceleration including gravity
     private float mAccel; // acceleration apart from gravity
     private TextView textView;
+    private drawClass drawClass_obj;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(new drawClass(this, null));
+//        setContentView(new drawClass(this, null));
+
+        drawClass_obj = new drawClass(this,null);
+        setContentView(drawClass_obj);
+
 //        registerReceiver(new BroadcastThis(), new IntentFilter("android.intent.action.USER_PRESENT"));
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
@@ -135,8 +141,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 //        textView = (TextView)findViewById(R.id.accelerometer_textview);
         int accel = Math.abs((int) mAccel);
         if (accel > 2) {
-                drawClass eraseCanvas = new drawClass(this, null);
-                eraseCanvas.eraseFunction();
+//                drawClass eraseCanvas = new drawClass(this, null);
+                drawClass_obj.eraseFunction();
             Toast.makeText(MainActivity.this, "Shaking @"+accel, Toast.LENGTH_SHORT).show();
         } else {
 
